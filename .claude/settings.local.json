@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:vitalo.fit)",
-      "WebFetch(domain:www.researchgate.net)"
+      "WebFetch(domain:www.researchgate.net)",
+      "Bash(git init)",
+      "Bash(git add .)"
     ]
   }
 }
