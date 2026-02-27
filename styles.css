@@ -1,0 +1,1159 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4A4238;
+    --secondary-color: #FAF7F2;
+    --accent-color: #C9A690;
+    --accent-dark: #A88B7A;
+    --text-primary: #4A4238;
+    --text-secondary: #8B7E74;
+    --border-color: #E8DCC4;
+    --cream: #F5F0E8;
+    --beige: #E8DCC4;
+    --terracotta: #D4A59A;
+    --sage: #B7BFA9;
+    --warm-white: #FFFCF7;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--warm-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 252, 247, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(12%) saturate(1089%) hue-rotate(355deg) brightness(95%) contrast(89%);
+    transition: var(--transition);
+}
+
+.logo:hover .logo-image {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(12%) saturate(1089%) hue-rotate(353deg) brightness(95%) contrast(89%);
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    transition: var(--transition);
+    border-radius: 6px;
+}
+
+.lang-btn:hover {
+    color: var(--text-primary);
+    background: var(--beige);
+}
+
+.lang-btn.active {
+    color: var(--terracotta);
+    font-weight: 600;
+}
+
+.lang-separator {
+    color: var(--border-color);
+    font-size: 0.875rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Hero Section with Slideshow */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Fallback gradient when images are not loaded */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--terracotta) 100%);
+    z-index: -1;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(232, 220, 196, 0.4) 0%, rgba(201, 166, 144, 0.5) 100%);
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--terracotta);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background: var(--accent-dark);
+    box-shadow: 0 20px 40px rgba(201, 166, 144, 0.3);
+}
+
+/* Slideshow Navigation Dots */
+.slide-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(232, 220, 196, 0.6);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background-color: var(--beige);
+}
+
+.dot.active {
+    background-color: var(--terracotta);
+    border-color: rgba(232, 220, 196, 0.5);
+    transform: scale(1.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.section-header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* About Section */
+.about {
+    background: var(--secondary-color);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--border-color);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    background: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(201, 166, 144, 0.15);
+}
+
+.info-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Map Section */
+.map-section {
+    background: var(--warm-white);
+}
+
+.map-container {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(201, 166, 144, 0.1);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.map-container:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(201, 166, 144, 0.15);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.map-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.map-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--cream);
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.map-info-item:hover {
+    background: white;
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(201, 166, 144, 0.1);
+}
+
+.map-info-item .icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.map-info-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+
+.map-info-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Membership/Pricing Section */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pricing-card {
+    background: var(--cream);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    background: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 30px 60px rgba(201, 166, 144, 0.2);
+}
+
+.pricing-card.featured {
+    border-color: var(--terracotta);
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--accent-color) 100%);
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sage);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.price {
+    margin-bottom: 2rem;
+}
+
+.currency {
+    font-size: 2rem;
+    vertical-align: top;
+}
+
+.amount {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.period {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+}
+
+.pricing-card.featured .period {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.features li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.pricing-card.featured .features li {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.select-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.select-button:hover {
+    background: var(--accent-dark);
+    transform: scale(1.02);
+}
+
+.pricing-card.featured .select-button {
+    background: white;
+    color: var(--terracotta);
+}
+
+/* Tennis Section */
+.tennis {
+    background: var(--secondary-color);
+}
+
+.tennis-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.tennis-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tennis-info p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.amenities {
+    list-style: none;
+}
+
+.amenities li {
+    padding: 0.75rem 0;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+.booking-widget {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(201, 166, 144, 0.1);
+}
+
+.booking-widget h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.booking-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.booking-embed {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    background: white;
+    margin: 1.5rem 0;
+}
+
+.booking-embed iframe {
+    display: block;
+    width: 100%;
+}
+
+.booking-form label {
+    display: block;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.booking-form select,
+.booking-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.booking-form select:focus,
+.booking-form input:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    background: white;
+}
+
+.book-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: var(--transition);
+}
+
+.book-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.booking-note {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Classes Section */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.class-card {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.class-card:hover {
+    transform: translateY(-8px);
+    background: white;
+    border-color: var(--sage);
+    box-shadow: 0 20px 40px rgba(183, 191, 169, 0.2);
+}
+
+.class-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.class-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.class-card > p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.class-times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.class-times span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.class-times span:first-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Team Section */
+.team {
+    background: var(--secondary-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.team-member {
+    text-align: center;
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    background: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(201, 166, 144, 0.15);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--accent-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--border-color);
+}
+
+.placeholder-photo {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.bio {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Physiotherapy Section */
+.physio-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.physio-services {
+    display: grid;
+    gap: 2rem;
+}
+
+.service-item {
+    padding: 2rem;
+    background: var(--cream);
+    border-radius: 16px;
+    border-left: 4px solid var(--terracotta);
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.service-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.appointment-box {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(201, 166, 144, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.appointment-box h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.appointment-box > p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.pricing-list {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.pricing-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.pricing-list li:last-child {
+    border-bottom: none;
+    color: var(--sage);
+    font-weight: 600;
+}
+
+.contact-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.contact-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+/* Nutrition Section */
+.nutrition {
+    background: var(--secondary-color);
+}
+
+.nutrition-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+}
+
+.nutrition-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.nutrition-info > p {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.services-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.service {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.service h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.service p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.nutrition-booking {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(201, 166, 144, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.nutrition-booking h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.consultation-form label {
+    display: block;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.consultation-form select,
+.consultation-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.consultation-form select:focus,
+.consultation-form input:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    background: white;
+}
+
+.note {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Contact/Footer Section */
+.contact {
+    background: var(--beige);
+    color: var(--text-primary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(12%) saturate(1089%) hue-rotate(355deg) brightness(95%) contrast(89%);
+}
+
+.footer-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--terracotta);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tennis-content,
+    .physio-content,
+    .nutrition-content {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-box,
+    .nutrition-booking {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .language-switcher {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .pricing-grid,
+    .schedule-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+
+    .map-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .tennis-content {
+        flex-direction: column;
+    }
+
+    .booking-embed iframe {
+        height: 500px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo-image {
+        height: 32px;
+    }
+
+    .language-switcher {
+        gap: 0.3rem;
+        margin-right: 0.5rem;
+    }
+
+    .lang-btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .map-info-item {
+        padding: 1rem;
+    }
+
+    .booking-embed iframe {
+        height: 450px;
+    }
+
+    .footer-logo {
+        height: 40px;
+    }
+
+    .info-card,
+    .booking-widget,
+    .appointment-box,
+    .nutrition-booking {
+        padding: 1.5rem;
+    }
+}

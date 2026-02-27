@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vitalo.fit)",
+      "WebFetch(domain:www.researchgate.net)"
+    ]
+  }
+}

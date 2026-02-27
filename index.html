@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALO - Premium Fitness & Health Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="VITALO" class="logo-image">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" data-lang="nav.home">Startseite</a></li>
+                <li><a href="#about" data-lang="nav.about">Über uns</a></li>
+                <li><a href="#membership" data-lang="nav.membership">Mitgliedschaft</a></li>
+                <li><a href="#tennis" data-lang="nav.tennis">Tennis</a></li>
+                <li><a href="#classes" data-lang="nav.classes">Kurse</a></li>
+                <li><a href="#team" data-lang="nav.team">Team</a></li>
+                <li><a href="#physiotherapy" data-lang="nav.physiotherapy">Physiotherapie</a></li>
+                <li><a href="#nutrition" data-lang="nav.nutrition">Ernährung</a></li>
+                <li><a href="#contact" data-lang="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang-switch="de">DE</button>
+                <span class="lang-separator">|</span>
+                <button class="lang-btn" data-lang-switch="en">EN</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slideshow -->
+    <section id="home" class="hero">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <div class="slide-overlay"></div>
+                <img src="images/2024-11-04.webp" alt="VITALO Reception & Lounge">
+            </div>
+            <div class="slide fade">
+                <div class="slide-overlay"></div>
+                <img src="images/_MG_8826.webp" alt="VITALO Training Equipment">
+            </div>
+            <div class="slide fade">
+                <div class="slide-overlay"></div>
+                <img src="images/_MG_8847.webp" alt="VITALO Tennis Court">
+            </div>
+            <div class="slide fade">
+                <div class="slide-overlay"></div>
+                <img src="images/_MG_8877.webp" alt="VITALO Facilities">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>VITALO</h1>
+            <p data-lang="hero.subtitle">Therapie | Training | Gesundheit</p>
+            <a href="#membership" class="cta-button" data-lang="hero.cta">Jetzt starten</a>
+        </div>
+        <div class="slide-nav">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="about.title">Willkommen bei VITALO</h2>
+                <p data-lang="about.subtitle">Wo Fitness auf Wellness trifft</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">📍</div>
+                    <h3 data-lang="about.location.title">Standort</h3>
+                    <p data-lang="about.location.address">Schallfelderstraße 48<br>97447 Gerolzhofen</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🕐</div>
+                    <h3 data-lang="about.hours.title">Öffnungszeiten</h3>
+                    <p data-lang="about.hours.schedule">Montag - Donnerstag: 08:30 - 22:00<br>
+                       Freitag: 08:30 - 21:00<br>
+                       Samstag: 14:00 - 19:00<br>
+                       Sonntag: 09:00 - 14:00</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📞</div>
+                    <h3 data-lang="about.contact.title">Kontakt</h3>
+                    <p>Telefon: 09382 4718<br>
+                       E-Mail: info@vitalo.fit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="map.title">Besuche uns</h2>
+                <p data-lang="map.subtitle">Finde uns in Gerolzhofen</p>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://maps.google.com/maps?q=Schallfelderstra%C3%9Fe+48,+97447+Gerolzhofen,+Germany&output=embed"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-info">
+                <div class="map-info-item">
+                    <div class="icon">🚗</div>
+                    <div>
+                        <h4 data-lang="map.parking.title">Parken</h4>
+                        <p data-lang="map.parking.description">Kostenlose Parkplätze direkt am Eingang verfügbar</p>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <div class="icon">🚌</div>
+                    <div>
+                        <h4 data-lang="map.transit.title">Öffentliche Verkehrsmittel</h4>
+                        <p data-lang="map.transit.description">Bushaltestelle 200m entfernt</p>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <div class="icon">🚶</div>
+                    <div>
+                        <h4 data-lang="map.accessibility.title">Barrierefreiheit</h4>
+                        <p data-lang="map.accessibility.description">Vollständig barrierefrei zugänglich</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section id="membership" class="section membership">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="membership.title">Mitgliedschaftspläne</h2>
+                <p data-lang="membership.subtitle">Wähle den perfekten Plan für deine Fitnessziele</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 data-lang="membership.basic.title">Basic</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">49</span>
+                        <span class="period" data-lang="membership.period">/Monat</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang="membership.basic.feature1">✓ Fitnessstudio-Zugang</li>
+                        <li data-lang="membership.basic.feature2">✓ Umkleideraum & Duschen</li>
+                        <li data-lang="membership.basic.feature3">✓ Kostenlose Parkplätze</li>
+                        <li data-lang="membership.basic.feature4">✓ 2 Gästepässe/Monat</li>
+                    </ul>
+                    <button class="select-button" data-lang="membership.selectButton">Plan wählen</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge" data-lang="membership.popular">Am beliebtesten</div>
+                    <h3 data-lang="membership.premium.title">Premium</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">79</span>
+                        <span class="period" data-lang="membership.period">/Monat</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang="membership.premium.feature1">✓ Alle Basic-Funktionen</li>
+                        <li data-lang="membership.premium.feature2">✓ Unbegrenzte Kurse</li>
+                        <li data-lang="membership.premium.feature3">✓ Tennisplatz-Zugang</li>
+                        <li data-lang="membership.premium.feature4">✓ Sauna & Spa</li>
+                        <li data-lang="membership.premium.feature5">✓ 5 Gästepässe/Monat</li>
+                    </ul>
+                    <button class="select-button" data-lang="membership.selectButton">Plan wählen</button>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-lang="membership.elite.title">Elite</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">129</span>
+                        <span class="period" data-lang="membership.period">/Monat</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang="membership.elite.feature1">✓ Alle Premium-Funktionen</li>
+                        <li data-lang="membership.elite.feature2">✓ Personaltraining (2x/Monat)</li>
+                        <li data-lang="membership.elite.feature3">✓ Physiotherapie-Rabatt</li>
+                        <li data-lang="membership.elite.feature4">✓ Ernährungsberatung</li>
+                        <li data-lang="membership.elite.feature5">✓ Prioritätsbuchung</li>
+                        <li data-lang="membership.elite.feature6">✓ Unbegrenzte Gästepässe</li>
+                    </ul>
+                    <button class="select-button" data-lang="membership.selectButton">Plan wählen</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tennis Courts Section -->
+    <section id="tennis" class="section tennis">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="tennis.title">Tennisplätze</h2>
+                <p data-lang="tennis.subtitle">Buche deine Platzzeit online</p>
+            </div>
+            <div class="tennis-content">
+                <div class="tennis-info">
+                    <h3 data-lang="tennis.info.title">Premium Indoor-Plätze</h3>
+                    <p data-lang="tennis.info.description">Wir verfügen über 2 hochmoderne Indoor-Tennisplätze mit professionellen Belägen, perfekter Beleuchtung und Klimatisierung für ganzjähriges Spiel.</p>
+                    <ul class="amenities">
+                        <li data-lang="tennis.amenities.surface">✓ Professioneller Hartplatzbelag</li>
+                        <li data-lang="tennis.amenities.lighting">✓ LED-Beleuchtungssystem</li>
+                        <li data-lang="tennis.amenities.climate">✓ Klimatisierte Umgebung</li>
+                        <li data-lang="tennis.amenities.rental">✓ Ausrüstungsverleih verfügbar</li>
+                        <li data-lang="tennis.amenities.coaching">✓ Private Trainerstunden</li>
+                    </ul>
+                </div>
+                <div class="booking-widget">
+                    <h3 data-lang="tennis.booking.title">Platz buchen</h3>
+                    <p class="booking-description" data-lang="tennis.booking.description">Sieh dir die Verfügbarkeit in Echtzeit an und buche deinen Tennisplatz direkt online.</p>
+                    <div class="booking-embed">
+                        <iframe
+                            src="https://vitalo.ebusy.de/court-module/1497"
+                            width="100%"
+                            height="600"
+                            style="border:0;"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <p class="booking-note" data-lang="tennis.booking.note">Mitglieder: Kostenlos | Nicht-Mitglieder: 25€/Stunde</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="section classes">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="classes.title">Kursplan</h2>
+                <p data-lang="classes.subtitle">Von Experten geleitete Kurse für alle Fitnesslevel</p>
+            </div>
+            <div class="schedule-grid">
+                <div class="class-card">
+                    <div class="class-icon">🏃</div>
+                    <h3>HYROX</h3>
+                    <p data-lang="classes.hyrox.description">Hochintensives funktionelles Fitness-Training mit Laufen und Workout-Stationen</p>
+                    <div class="class-times">
+                        <span data-lang="classes.hyrox.days">Mo, Mi, Fr</span>
+                        <span>6:00 | 18:00</span>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">💪</div>
+                    <h3>CrossFit</h3>
+                    <p data-lang="classes.crossfit.description">Ständig variierende funktionelle Bewegungen mit hoher Intensität</p>
+                    <div class="class-times">
+                        <span data-lang="classes.crossfit.days">Mo - Sa</span>
+                        <span>7:00 | 17:00</span>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">🧘</div>
+                    <h3>Yoga</h3>
+                    <p data-lang="classes.yoga.description">Achtsame Bewegung und Atemarbeit für Flexibilität und inneren Frieden</p>
+                    <div class="class-times">
+                        <span data-lang="classes.yoga.days">Di, Do, Sa</span>
+                        <span>9:00 | 19:00</span>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">🤸</div>
+                    <h3>Stretching</h3>
+                    <p data-lang="classes.stretching.description">Geführte Flexibilitäts- und Mobilitätseinheiten für Erholung und Leistung</p>
+                    <div class="class-times">
+                        <span data-lang="classes.stretching.days">Täglich</span>
+                        <span>12:00 | 20:00</span>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-icon">🚴</div>
+                    <h3>Spinning</h3>
+                    <p data-lang="classes.spinning.description">Energiegeladene Cycling-Kurse mit motivierender Musik und Anleitung</p>
+                    <div class="class-times">
+                        <span data-lang="classes.spinning.days">Mo, Mi, Fr, So</span>
+                        <span>7:30 | 18:30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section team">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="team.title">Lerne unser Team kennen</h2>
+                <p data-lang="team.subtitle">Engagierte Profis, die sich deinem Erfolg verschrieben haben</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">MA</div>
+                    </div>
+                    <h3>Maria</h3>
+                    <p class="role" data-lang="team.maria.role">General Manager</p>
+                    <p class="bio" data-lang="team.maria.bio">Leitet das gesamte VITALO-Team und sorgt für einen reibungslosen Ablauf aller Bereiche. Ansprechpartnerin für Mitgliedschaften und strategische Planung.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">LU</div>
+                    </div>
+                    <h3>Luca</h3>
+                    <p class="role" data-lang="team.luca.role">Corporate & Student Training</p>
+                    <p class="bio" data-lang="team.luca.bio">Spezialisiert auf betriebliche Gesundheitsprogramme und Studentenbetreuung. Entwickelt maßgeschneiderte Trainingspläne für Firmen und junge Sportler.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">SA</div>
+                    </div>
+                    <h3>Samira</h3>
+                    <p class="role" data-lang="team.samira.role">Rezeption</p>
+                    <p class="bio" data-lang="team.samira.bio">Erste Anlaufstelle für alle Fragen und Anliegen. Kümmert sich um Check-ins, Terminbuchungen und sorgt für eine herzliche Atmosphäre.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">RA</div>
+                    </div>
+                    <h3>Rainer</h3>
+                    <p class="role" data-lang="team.rainer.role">Rezeption</p>
+                    <p class="bio" data-lang="team.rainer.bio">Unterstützt das Empfangsteam und hilft bei allen organisatorischen Fragen. Koordiniert Kursbuchungen und Mitgliederbetreuung.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">KA</div>
+                    </div>
+                    <h3>Katalin</h3>
+                    <p class="role" data-lang="team.katalin.role">CrossFit Coach</p>
+                    <p class="bio" data-lang="team.katalin.bio">Zertifizierte CrossFit-Trainerin mit Leidenschaft für funktionelles Training. Motiviert und fordert dich in jedem Workout heraus.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">KT</div>
+                    </div>
+                    <h3>Katha</h3>
+                    <p class="role" data-lang="team.katha.role">Stretching & Yoga</p>
+                    <p class="bio" data-lang="team.katha.bio">Expertin für Beweglichkeit und Körperbewusstsein. Leitet entspannende Yoga- und intensive Stretching-Sessions für optimale Regeneration.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">KR</div>
+                    </div>
+                    <h3>Kristina</h3>
+                    <p class="role" data-lang="team.kristina.role">Ernährungsberaterin</p>
+                    <p class="bio" data-lang="team.kristina.bio">Registrierte Ernährungsberaterin, die individuelle Ernährungspläne erstellt und dich auf dem Weg zu deinen Gesundheitszielen begleitet.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-photo">DO</div>
+                    </div>
+                    <h3>Dominik</h3>
+                    <p class="role" data-lang="team.dominik.role">Tennis Coach</p>
+                    <p class="bio" data-lang="team.dominik.bio">Professioneller Tennistrainer für alle Spielstärken. Bietet Einzeltraining und Gruppenunterricht auf höchstem Niveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Physiotherapy Section -->
+    <section id="physiotherapy" class="section physiotherapy">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="physio.title">Physiotherapie-Leistungen</h2>
+                <p data-lang="physio.subtitle">Fachkundige Betreuung zur Verletzungsprävention und Genesung</p>
+            </div>
+            <div class="physio-content">
+                <div class="physio-services">
+                    <div class="service-item">
+                        <h3 data-lang="physio.sports.title">Sportverletzungs-Rehabilitation</h3>
+                        <p data-lang="physio.sports.description">Umfassende Behandlungspläne für akute und chronische Sportverletzungen, um dir zu helfen, sicher zu Höchstleistungen zurückzukehren.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="physio.manual.title">Manuelle Therapie</h3>
+                        <p data-lang="physio.manual.description">Hands-on-Techniken einschließlich Massage, Gelenkmobilisation und Weichteiltherapie zur Schmerzlinderung und verbesserten Beweglichkeit.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="physio.movement.title">Bewegungsanalyse</h3>
+                        <p data-lang="physio.movement.description">Detaillierte Bewertung deiner Bewegungsmuster zur Identifikation und Korrektur von Ungleichgewichten, bevor sie zu Verletzungen führen.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3 data-lang="physio.surgery.title">Postoperative Genesung</h3>
+                        <p data-lang="physio.surgery.description">Strukturierte Rehabilitationsprogramme zur Wiederherstellung von Funktion und Kraft nach orthopädischen Operationen.</p>
+                    </div>
+                </div>
+                <div class="appointment-box">
+                    <h3 data-lang="physio.booking.title">Termin buchen</h3>
+                    <p data-lang="physio.booking.description">Unsere Physiotherapie-Leistungen stehen sowohl Mitgliedern als auch Nicht-Mitgliedern zur Verfügung.</p>
+                    <ul class="pricing-list">
+                        <li data-lang="physio.booking.initial">Erstbeurteilung (60 Min): 120€</li>
+                        <li data-lang="physio.booking.followup">Folgesitzung (45 Min): 90€</li>
+                        <li data-lang="physio.booking.package">5er-Paket: 400€</li>
+                        <li data-lang="physio.booking.discount">Elite-Mitglieder: 20% Rabatt</li>
+                    </ul>
+                    <button class="contact-button" data-lang="physio.booking.button">Beratung vereinbaren</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section id="nutrition" class="section nutrition">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-lang="nutrition.title">Sporternährung</h2>
+                <p data-lang="nutrition.subtitle">Personalisierte Ernährungsstrategien für optimale Leistung</p>
+            </div>
+            <div class="nutrition-content">
+                <div class="nutrition-info">
+                    <h3 data-lang="nutrition.info.title">Tanke Energie für deine Leistung</h3>
+                    <p data-lang="nutrition.info.description">Unser registrierter Sporternährungsberater bietet evidenzbasierte Beratung, um dir zu helfen, deine Fitnessziele durch richtige Ernährung zu erreichen.</p>
+
+                    <div class="services-list">
+                        <div class="service">
+                            <h4 data-lang="nutrition.assessment.title">Ernährungsbewertung</h4>
+                            <p data-lang="nutrition.assessment.description">Umfassende Bewertung deiner aktuellen Ernährung, Ziele und Lebensweise zur Erstellung eines personalisierten Plans.</p>
+                        </div>
+                        <div class="service">
+                            <h4 data-lang="nutrition.meal.title">Essensplanung</h4>
+                            <p data-lang="nutrition.meal.description">Maßgeschneiderte Essenspläne, angepasst an deinen Trainingsplan, Vorlieben und Ernährungsbedürfnisse.</p>
+                        </div>
+                        <div class="service">
+                            <h4 data-lang="nutrition.performance.title">Leistungsoptimierung</h4>
+                            <p data-lang="nutrition.performance.description">Strategisches Ernährungs-Timing und Nahrungsergänzungsberatung für verbesserte sportliche Leistung.</p>
+                        </div>
+                        <div class="service">
+                            <h4 data-lang="nutrition.composition.title">Körperzusammensetzung</h4>
+                            <p data-lang="nutrition.composition.description">Evidenzbasierte Ansätze für gesundes Gewichtsmanagement und Körperzusammensetzungsziele.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrition-booking">
+                    <h3 data-lang="nutrition.booking.title">Beratung buchen</h3>
+                    <form class="consultation-form">
+                        <label data-lang="nutrition.booking.service">Leistung auswählen</label>
+                        <select>
+                            <option data-lang="nutrition.booking.initial">Erstberatung (90 Min) - 150€</option>
+                            <option data-lang="nutrition.booking.followup">Folgesitzung (60 Min) - 100€</option>
+                            <option data-lang="nutrition.booking.quick">Schnell-Check (30 Min) - 60€</option>
+                        </select>
+
+                        <label data-lang="nutrition.booking.date">Bevorzugtes Datum</label>
+                        <input type="date">
+
+                        <label data-lang="nutrition.booking.time">Bevorzugte Zeit</label>
+                        <select>
+                            <option>9:00</option>
+                            <option>10:30</option>
+                            <option>12:00</option>
+                            <option>13:30</option>
+                            <option>15:00</option>
+                            <option>16:30</option>
+                            <option>18:00</option>
+                        </select>
+
+                        <button type="submit" class="book-button" data-lang="nutrition.booking.button">Termin anfragen</button>
+                    </form>
+                    <p class="note" data-lang="nutrition.booking.note">Elite-Mitglieder erhalten eine kostenlose Beratung pro Monat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.png" alt="VITALO" class="footer-logo">
+                    <p data-lang="footer.description">Deine erstklassige Destination für Fitness, Wellness und sportliche Leistung.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang="footer.quicklinks.title">Schnellzugriff</h4>
+                    <ul>
+                        <li><a href="#membership" data-lang="footer.quicklinks.membership">Mitgliedschaft</a></li>
+                        <li><a href="#classes" data-lang="footer.quicklinks.classes">Kurse</a></li>
+                        <li><a href="#tennis" data-lang="footer.quicklinks.tennis">Tennis</a></li>
+                        <li><a href="#team" data-lang="footer.quicklinks.team">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang="footer.services.title">Leistungen</h4>
+                    <ul>
+                        <li><a href="#physiotherapy" data-lang="footer.services.physio">Physiotherapie</a></li>
+                        <li><a href="#nutrition" data-lang="footer.services.nutrition">Ernährung</a></li>
+                        <li><a href="#" data-lang="footer.services.personal">Personal Training</a></li>
+                        <li><a href="#" data-lang="footer.services.corporate">Betriebliches Gesundheitsmanagement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang="footer.contact.title">Kontakt</h4>
+                    <p>Schallfelderstraße 48<br>97447 Gerolzhofen<br>Deutschland</p>
+                    <p>Telefon: 09382 4718<br>E-Mail: info@vitalo.fit<br>Web: www.vitalo.fit</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang="footer.copyright">&copy; 2026 VITALO Fitness & Health Club. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
